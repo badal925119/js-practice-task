@@ -1,27 +1,23 @@
- 
-// How to get High Price Phone an Arry
 
-const phones =[
-   {Name:'Samsung', Price:20000, Camera:'20mp', Color:'Black'},
-   {Name:'Xaomi', Price:12000, Camera:'20mp', Color:'Black'},
-   {Name:'Oppo', Price:22000, Camera:'20mp', Color:'Black'},
-   {Name:'I Phone', Price:220000, Camera:'20mp', Color:'Black'},
-   {Name:'Vivo', Price:12000, Camera:'20mp', Color:'Black'},
-   {Name:'Walton', Price:8000, Camera:'20mp', Color:'Black'},
-   {Name:'Honor', Price:26000, Camera:'20mp', Color:'Black'},
+
+// Calculate the total cost of the products in a shopping cart
+
+const product =[
+   {name:'Shampo', Price:34},
+   {name:'Shirt', Price:560},
+   {name:'Pant', Price:660},
+   {name:'Shoes', Price:689},
 ]
 
 
+function getShoppingTotal(products){
+   let total = 0;
+   for( const product of products){
+      total = total + product.Price
+   }
+   return total;
 
-function getCheapPhone(phones){
-   let max =phones[0];
-   for(phone of phones){
-   if(phone.Price > max.Price){
-        max = phone
-   }
-   }
-   return max;
 }
 
-const cheap = getCheapPhone(phones);
-console.log(cheap);
+const total = getShoppingTotal(product);
+console.log(total);
